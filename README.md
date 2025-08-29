@@ -1,1 +1,51 @@
-# Yelp-Reviews-Analytics
+# Yelp Reviews Analysis using AWS S3 & Snowflake
+
+## 📌 Project Overview
+This project demonstrates how to process and analyze Yelp reviews data using **AWS S3** for storage, **Snowflake** for ingestion & querying, and **SQL** for analysis.  
+The goal was to transform raw JSON review data into structured tables, enrich it with sentiment analysis, and answer key business questions about businesses, users, and reviews.
+
+## 🚀 Tech Stack
+- **Data Storage:** AWS S3  
+- **Data Warehouse:** Snowflake  
+- **Query Language:** SQL  
+- **Python UDF in Snowflake:** Sentiment analysis using TextBlob  
+
+## 📂 Project Workflow
+1. **Data Ingestion**
+   - Yelp review JSON data was uploaded to AWS S3.
+   - Data was ingested into Snowflake.
+   - Variant JSON columns were transformed into structured Snowflake tables.
+
+2. **Data Transformation**
+   - Created structured tables for `reviews` and `businesses`.
+   - Implemented a **Snowflake UDF (Python)** for sentiment analysis (positive, negative, neutral).
+
+3. **Business Analysis**
+   - SQL queries were written to answer **10 business-driven questions** such as:
+     - Most popular business categories.
+     - Top users who reviewed the most restaurants.
+     - Top businesses by 5-star review percentage.
+     - Monthly review trends.
+     - Businesses with the highest positive sentiment.
+
+## 📊 Business Questions Solved
+1. Number of businesses in each category (Top 10).  
+2. Top 10 users who reviewed the most restaurants.  
+3. Most popular business categories by number of reviews.  
+4. Top 3 most recent reviews per business.  
+5. Month with the highest number of reviews.  
+6. Percentage of 5-star reviews per business.  
+7. Top 5 most reviewed businesses in each city.  
+8. Average rating of businesses with at least 100 reviews.  
+9. Top 10 users with most reviews and their reviewed businesses.  
+10. Top 10 businesses with highest positive sentiment reviews.  
+
+## 🛠 Key Features
+- End-to-end pipeline: **Raw JSON → AWS S3 → Snowflake → SQL Analysis**  
+- **Sentiment analysis UDF** integrated into Snowflake queries.  
+- Optimized SQL queries (use of CTEs, window functions, joins).  
+- Business-focused insights derived from raw reviews dataset.  
+
+## 📷 Screenshots
+<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/b6af7b0c-8b92-4378-b21d-4cd5b20e68f0" />
+
