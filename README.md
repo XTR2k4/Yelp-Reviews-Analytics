@@ -45,7 +45,3 @@ The goal was to transform raw JSON review data into structured tables, enrich it
 - **Sentiment analysis UDF** integrated into Snowflake queries.  
 - Optimized SQL queries (use of CTEs, window functions, joins).  
 - Business-focused insights derived from raw reviews dataset.  
-
-## 📷 Screenshots
-<img width="940" height="529" alt="image" src="https://github.com/user-attachments/assets/b6af7b0c-8b92-4378-b21d-4cd5b20e68f0" />
-
