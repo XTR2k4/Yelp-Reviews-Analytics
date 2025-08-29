@@ -14,19 +14,19 @@ The goal was to transform raw JSON review data into structured tables, enrich it
 1. **Data Ingestion**  
    - Yelp review JSON data was uploaded to AWS S3.  
    - Data was ingested into Snowflake using `COPY INTO`.  
-   - Script: [ingestion.sql](sql/ingestion.sql)  
+   - Script: [Ingestion Script](sql/ingestion.sql)  
 
 2. **Data Transformation**  
    - Created structured tables for `reviews` and `businesses`.  
-   - Script: [transformation.sql](sql/transformation.sql)  
+   - Script: [Transformation Script](sql/transformation.sql)  
 
 3. **Sentiment Analysis**  
    - Implemented a **Snowflake UDF (Python)** using TextBlob to classify reviews as positive, neutral, or negative.  
-   - Script: [sentiment-udf.sql](sql/sentiment-udf.sql)  
+   - Script: [Sentiment Analysis UDF](sql/sentiment-udf.sql)  
 
 4. **Business Analysis**  
    - SQL queries were written to answer **10 business-driven questions**.  
-   - File: [analysis_queries.md](sql/analysis_queries.md)  
+   - File: [Analysis Queries](sql/analysis_queries.md)  
 
 ## 📊 Business Questions Solved
 1. Number of businesses in each category (Top 10).  
