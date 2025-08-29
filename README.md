@@ -11,22 +11,22 @@ The goal was to transform raw JSON review data into structured tables, enrich it
 - **Python UDF in Snowflake:** Sentiment analysis using TextBlob  
 
 ## 📂 Project Workflow
-1. **Data Ingestion**
-   - Yelp review JSON data was uploaded to AWS S3.
-   - Data was ingested into Snowflake.
-   - Variant JSON columns were transformed into structured Snowflake tables.
+1. **Data Ingestion**  
+   - Yelp review JSON data was uploaded to AWS S3.  
+   - Data was ingested into Snowflake using `COPY INTO`.  
+   - Script: [ingestion.sql](sql/ingestion.sql)  
 
-2. **Data Transformation**
-   - Created structured tables for `reviews` and `businesses`.
-   - Implemented a **Snowflake UDF (Python)** for sentiment analysis (positive, negative, neutral).
+2. **Data Transformation**  
+   - Created structured tables for `reviews` and `businesses`.  
+   - Script: [transformation.sql](sql/transformation.sql)  
 
-3. **Business Analysis**
-   - SQL queries were written to answer **10 business-driven questions** such as:
-     - Most popular business categories.
-     - Top users who reviewed the most restaurants.
-     - Top businesses by 5-star review percentage.
-     - Monthly review trends.
-     - Businesses with the highest positive sentiment.
+3. **Sentiment Analysis**  
+   - Implemented a **Snowflake UDF (Python)** using TextBlob to classify reviews as positive, neutral, or negative.  
+   - Script: [sentiment-udf.sql](sql/sentiment-udf.sql)  
+
+4. **Business Analysis**  
+   - SQL queries were written to answer **10 business-driven questions**.  
+   - File: [analysis_queries.md](sql/analysis_queries.md)  
 
 ## 📊 Business Questions Solved
 1. Number of businesses in each category (Top 10).  
@@ -41,7 +41,15 @@ The goal was to transform raw JSON review data into structured tables, enrich it
 10. Top 10 businesses with highest positive sentiment reviews.  
 
 ## 🛠 Key Features
-- End-to-end pipeline: **Raw JSON → AWS S3 → Snowflake → SQL Analysis**  
+- End-to-end workflow: **Raw JSON → AWS S3 → Snowflake → Structured Tables → SQL Analysis**  
 - **Sentiment analysis UDF** integrated into Snowflake queries.  
 - Optimized SQL queries (use of CTEs, window functions, joins).  
 - Business-focused insights derived from raw reviews dataset.  
+
+---
+
+📎 **Navigation**  
+- [Ingestion Script](sql/ingestion.sql)  
+- [Transformation Script](sql/transformation.sql)  
+- [Sentiment Analysis UDF](sql/sentiment-udf.sql)  
+- [Analysis Queries + Screenshots](sql/analysis_queries.md)  
